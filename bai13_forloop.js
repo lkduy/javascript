@@ -95,13 +95,12 @@ console.log(calculate(2, 5));
 
 function has(array, value){
     for(var i=0; i<array.length; i++){
+        var result = false;
         if(array[i]===value){
             return true;
-        }
-        else{
-            return false;
-        }
+        };
     };
+    return result
 };
 
-console.log(has([4,3,2,1],4));
+console.log(has([3,4,2,1],4));
