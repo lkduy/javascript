@@ -55,7 +55,6 @@ function double(num){
 
 
 sumAndDo([1,2,3,4], double);
-
 console.log('+++++++++++++++++++++++++++++++++')
 
 /**

@@ -23,6 +23,7 @@ function squaredRectangular(data){
 }
 
 console.log(squared);
+console.log('++++++++++++++++++++++++++++');
 
 
 
