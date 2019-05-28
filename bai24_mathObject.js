@@ -118,9 +118,30 @@ console.log('=========================')
 */
 
 function rightTriangle(a, b, c) {
-
+    if(a*a + b*b === c*c || a*a + c*c === b*b || c*c + b*b === a*a){
+        console.log('Yes');
+    }
+    else{
+        console.log('No');
+    }
 }
 
 rightTriangle(3, 4, 5); // "Yes"
 
-rightTriangle(1, 2, 3); // "No"
+rightTriangle(3, 5, 4); // "No"
+console.log('=========================')
+
+/* 
+  Viết hàm circleMachine() tính chu vi và diện tích hình tròn khi biết bán kính
+*/
+
+function circleMachine(r) {
+    var C = 2 * r * Math.PI;
+    console.log('Chu vi: ', C.toFixed(2));
+    var S = r * r * Math.PI;
+    console.log('Diện Tích: ', S.toFixed(2));
+}
+
+circleMachine(3);
+// Chu vi: 18.85
+// Diện tích: 28.27
