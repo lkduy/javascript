@@ -1,6 +1,7 @@
 var fs = require('fs');
 var readlineSync = require('readline-sync');
 let value
+let dataStudent;
 
 function questionCustomer(){
     console.log('1. Show all students');
@@ -11,23 +12,33 @@ function questionCustomer(){
     if(parseInt(value)===1){
         showAllstudent();
     }
-    if(parseInt(value)===1){
-
+    if(parseInt(value)===2){
+        createNewStudent();
+    }
+    if(parseInt(value)===3){
+        Exit();
     }
 }
 
+function getDataJsonFile(){
+    var dataStudentjson = fs.readFileSync('./data.json', {encoding: 'utf8'});// chuyển từ file .json thành object
+    dataStudent = JSON.parse(dataStudentjson);    
+}
 
-
+function saveDataJsonFile(){
+    var convertToJson = JSON.stringify(dataStudent);
+    fs.writeFileSync('./data.json', convertToJson);
+}
 
 
 function showAllstudent() {
-    var dataStudentjson = fs.readFileSync('./data.json', {encoding: 'utf8'});// chuyển từ file .json thành object
-    var dataStudent = JSON.parse(dataStudentjson);
+    getDataJsonFile();
     console.log(dataStudent);
     questionCustomer();        
 }
 
 function createNewStudent(){
+    getDataJsonFile();
     var newStudent = {};
     var ID = readlineSync.question('ID: ');
     newStudent.ID = ID;
@@ -37,7 +48,14 @@ function createNewStudent(){
     newStudent.Gender = gender;
     var classroom = readlineSync.question('Class: ');
     newStudent.Class = classroom;
-
+    dataStudent.push(newStudent);
+    saveDataJsonFile();
+    questionCustomer();
 }
+
+function Exit(){
+    return
+}
+
 
 questionCustomer();
