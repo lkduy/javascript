@@ -12,7 +12,7 @@ var Circle = function(x, y, r) {
 }
 
 Circle.prototype.isOverlapped = function(circle){
-    var d = Math.sqrt(Math.pow(this.x - circle.x, 2)+Math.pow(this.y - circle.y, 2));
+    var d = Math.sqrt(Math.pow(this.x - circle.x, 2) + Math.pow(this.y - circle.y, 2));
     if(d > this.r + circle.r)
     {
         return 1;
