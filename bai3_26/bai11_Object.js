@@ -1,31 +1,20 @@
-// Obkect methods
-// Các phương thức của Object
+var myDog = {
+    name: "đần",
+    weight: 20,
+    age: 1,
+    bark: function(){
+        console.log("my name is: ", this.name);
+    },
+    eat: function(bone){
+        return this.weight = this.weight + bone.weight;
+    }
+};
 
-// var myDog = {
-//     weight: 5,
-//     name: 'Đần',
-//     age: 1,
-//     bark: function() {
-//         console.log('meo meo, my name is : ', this.name);  // This chính là Object mà Method này thuộc về
-//     },
-//     eat: function(bone) {
-//         this.weight = this.weight + bone.weight;
-//         return this;
-//     }
+var bone = {
+    weight: 5
+};
 
-// };
-
-// var bone = { weight: 0.5};
-
-// function bark() {
-//     console.log('meo meo, my name is : ', this.name)  // This.name = undefied
-// };
-
-// console.log('before eat :', myDog.weight);
-
-// myDog.eat(bone);
-// console.log('after eating : ', myDog.weight);
-
+//console.log(myDog.eat(bone));
 
 /**
  * Khai báo biến `rectangle` là 1 object gồm có các property:
@@ -37,20 +26,20 @@
  * - getArea: trả về diện tích
  */
 
- var rectangle = {
-     width: 20,
-     height: 40,
-     getWidth: function() {
-         return this.width;
-     },
-     getHeight: function() {
-         return this.height;
-     },
-     getArea: function() {
-         return this.width * this.height;
-     }
- };
+var rectangle = {
+    width: 10,
+    height: 20,
+    getWidth: function(){
+        return this.width;
+    },
+    getHeight: function(){
+        return this.height;
+    },
+    getArea: function(){
+        return this.height * this.width;
+    }
+};
 
- console.log('chiều rộng:', rectangle.getWidth());
- console.log('chiều cao:', rectangle.getHeight())
- console.log('diện tích là:', rectangle.getArea());
+console.log(rectangle.getArea());
+console.log(rectangle.getHeight());
+console.log(rectangle.getWidth());
