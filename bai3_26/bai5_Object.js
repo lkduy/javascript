@@ -7,16 +7,20 @@
  *  };
  */
 
- var myDog = {
-     Name: "Lu",
-     weight: 50,
- };
+var myDog = {
+    name: "gấu",
+    age: 3,
+    weight: 30,
+    isAlive: true,
+};
 
- var myTeacher = {
-    Name: "Nguyễn Văn A",
-    Age: 40,
-    isMale: true
- };
+console.log(myDog.isAlive);
 
- myTeacher.isMale = false;
- console.log(myTeacher.isMale);
+var maiMap = {
+    name: "Nguyễn Huỳnh Lệ Mai",
+    weight: 60,
+    age: 24,
+    gender: 'female'
+}
+
+console.log(maiMap.gender)
