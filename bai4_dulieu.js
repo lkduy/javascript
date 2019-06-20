@@ -8,4 +8,4 @@
 
  var teacherName = "Nguyễn Văn A";
  var Age = 40;
- var isMale = True;
+ var isMale = true;
