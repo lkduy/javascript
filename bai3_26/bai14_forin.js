@@ -1,117 +1,52 @@
 var employees = [
-    {name: 'Thinh', age: 28},
-    {name: 'Ahihi', age:30},
-    {name: 'Ahehe', age: 30}
+    { name: "Duy", Age: 24},
+    { name: "Mai", Age: 31},
+    { name: "Khoa", Age: 27},
+    { name: "Huệ", Age: 34}
 ];
 
-for(var employee of employees) {
-    console.log(employee.name, employee.age);
-};
+for (var employee in employees){
+    console.log(employees[employee].name);
+}
+
+for (var employee of employees){
+    console.log(employee.name, employee.Age);
+}
 
 var myDog = {
-    name: "đần",
+    name: 'Đần',
     age: 1,
-    weight: 5
-};
+    weight: 5,
+}
 
-for(var key in myDog){
+for (var key in myDog){
     console.log(myDog[key]);
-};
+}
 
-/**
- * Điểm khác nhau giữa 2 vòng lặp for...of và for...in, viết code ví dụ
- */
-
- //- For in return vi trí của phần tử đó trong arr
-var arr = [1, 2, 3, 4]
-
-for(var i in arr){
-    console.log(arr[i]);
-};
-//- For of nó trá về phần tử trong arr luon
-
-for(j of arr){
-    console.log(j);
-};
-
-/**
- * Sử dụng vòng lặp for...of để tính tích của các phần tử trong một array gồm các số
- */
-
-function multiply(arr) {
-    var mul = 1;
-    for(i of arr){
-        mul = mul * i;
-    };
-    return mul
-};
-
-console.log(multiply([2, 3, 4])); // expect: 24
-console.log('++++++++++++++++++++++++++++++++++')
-
-/**
- * Sử dụng vòng lặp for...in để in ra tất cả các key trong object sau, in ra cả các key của các nested object (object con lồng bên trong object lớn)
- * Gợi ý: đây là bài tập khó, bạn nên tìm hiểu về recursive trước
- */
-
-var apartment = {
-    bedroom: {
-      area: 20,
-      bed: {
-        type: 'twin-bed',
-        price: 100
-      }
-    }
-  };
-
-for(var i in apartment){
-    console.log(i)
-    for(var j in apartment[i]){
-        console.log(j);
-        if(j==='bed'){
-            for(k in apartment[i][j]){
-                console.log(k)
-            };
-        };
-    };
-};
-  
-
-  /**
-   * Kết quả mong muốn:
-   * bedroom
-   * area
-   * bed
-   * type
-   * price
-   * Chú ý: không cần hiển thị ra đúng thứ tự như trên
-   */
-  
-console.log('++++++++++++++++++++++++++++++++++')
+console.log('=========')
     // Giả thiết: numbers là một array các số nguyên
     // Yêu cầu: 
     //	- trả về tổng các số, dùng vòng lặp for ... of
     //  - nếu array trống trả về 0
 
-var numbers = [1,2,3,4];
+var numbers = []
 
-function sum(numbers){
-    var sum = 0;
-    if(numbers===[]){
-        return sum;
+function sum(numbers) {
+    if (numbers === []){
+        return 0
     }
-    else{
-        for(var i of numbers){
-            sum += i;
-        };
+    else
+    {
+        var sum = 0
+        for (var number of numbers){
+            sum += number;
+        }
         return sum
-    };
-};
+    }
+}
 
 console.log(sum(numbers));
-
-
-console.log('++++++++++++++++++++++++++++++++++')
+console.log('=========')
 
     // viết hàm has để kiểm tra xem object có tồn tại 1 key xác định hay không
     // Tham số:
@@ -121,20 +56,23 @@ console.log('++++++++++++++++++++++++++++++++++')
     //	- true nếu có tồn tại
     //	- false nếu không tồn tại
 
+var object = {
+    name: "Mai",
+    age: 24
+}
 
-var myDog = {
-    a: 'hihi',
-    b: 'haha',
-};
 
-
-function has(object, key){
-    for(var i in object){
-        if(i===key){
+function has(object, key) {
+    for (var keyob in object){
+        if(keyob === key){
             return true;
-        };
-    };
-    return false;
-};
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
 
-console.log(has(myDog, 'v'));
+console.log(has(object, 'na'))
+  
