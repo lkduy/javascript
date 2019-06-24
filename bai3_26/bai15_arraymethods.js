@@ -10,8 +10,8 @@ a.push(c);
 console.log(a);
 console.log('========')
 
-var e = a.pop();  // đẩy phần tử cuối cùng ra
-console.log(a)
+var e = d.pop();  // đẩy phần tử cuối cùng ra
+console.log(d)
 console.log(e);
 console.log('========')
 
