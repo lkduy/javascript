@@ -1,25 +1,25 @@
-var fs = require('promise-fs');
+// var fs = require('promise-fs');
 
-var onDone = function(song){
-  console.log(song);
-}
+// function onDone(song) {
+//   console.log(song);
+// }
 
-var onError = function(error){
-  console.log(error);
-}
+// function onError(error) {
+//   console.log(error);
+// }
 
-function readFile(path){
-  return fs.readFile(path, 'utf8');
-}
+// function readFile(path) {
+//   return fs.readFile(path, {encoding: 'utf8'});
+// }
 
-readFile('song1.txt')
-  .then(onDone)
-  .catch(onError)
-  .then(function(){
-    return readFile('song2.txt');
-  })
-  .then(onDone)
-  .catch(onError);
+// readFile('song1.txt')
+//   .then(onDone)
+//   .then(function() {
+//     return readFile('song2.txt');
+//   })
+//   .then(onDone)
+//   .catch(onError);
+
 
 
 
