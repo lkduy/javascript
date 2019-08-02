@@ -15,8 +15,6 @@ function readFilePromise(path) {
     });
 }
 
-function 
-
 // co(function*() {
 //     var song1 = yield readFilePromise('./song1.txt');
 //     var song2 = yield readFilePromise('./song2.txt');
@@ -43,9 +41,9 @@ function
 //     });
 
 
-    /**
- * Sử dụng node co + axios để tải về các đường link sau theo 2 cách:
- */
+/**
+* Sử dụng node co + axios để tải về các đường link sau theo 2 cách:
+*/
 var urls = [
     'https://jsonplaceholder.typicode.com/todos/1',
     'https://jsonplaceholder.typicode.com/todos/2',
@@ -54,13 +52,37 @@ var urls = [
     'https://jsonplaceholder.typicode.com/todos/5'
   ];
   
-  // Cách 1: Sử dụng vòng lặp for
-  // Cách 2: Sử dụng array.map
-  // Gợi ý: Có thể yield 1 array các Promise
+// Cách 1: Sử dụng vòng lặp for
+function getData(url) {
+    return axios.get(url);
+}
 
-  getData("https://jsonplaceholder.typicode.com/todos/1")
-    .then(function(data) {
-        console.log(data);
-    }).catch(function(err) {
-        console.log(err);
-    });
+co(function*(urls) {
+    for(var i = 0; i < urls.length; i++) {
+        console.log(getData(urls[i]));
+    };
+})
+
+
+
+
+// Cách 2: Sử dụng array.map
+
+// var getAllData = co.wrap(function*(files) {
+//     var values = yield files.map(function(file) {
+//         return axios.get(file);
+//     });
+//     return values;
+// });
+
+// getAllData(urls)
+//     .then(function(value) {
+//         for (var i = 0; i < value.length; i++) {
+//             console.log(value[i].data);
+//         }
+//     })
+//     .catch(function(err) {
+//         console.log(err);
+//     });
+
+// Gợi ý: Có thể yield 1 array các Promise
